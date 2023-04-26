@@ -22,7 +22,9 @@ RUN <<EOT /bin/bash
     make build
 
     mkdir -p /opt/bitnami/${TARGET_DIR}/bin
+    mkdir -p /opt/bitnami/${TARGET_DIR}/licenses/
     cp -f ${PACKAGE} /opt/bitnami/${TARGET_DIR}/bin/${PACKAGE}
+    cp -f LICENSE /opt/bitnami/${TARGET_DIR}/licenses/${PACKAGE}-${VERSION}.txt
     popd
 
     rm -rf ${PACKAGE}
