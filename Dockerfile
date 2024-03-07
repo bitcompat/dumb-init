@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1.4
+# syntax=docker/dockerfile:1.7
 FROM bitnami/minideb:bullseye AS builder
 
 ARG PACKAGE=dumb-init
