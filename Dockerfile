@@ -1,5 +1,5 @@
-# syntax=docker/dockerfile:1.4
-FROM bitnami/minideb:bullseye AS builder
+# syntax=docker/dockerfile:1.8
+FROM bitnami/minideb:bookworm AS builder
 
 ARG PACKAGE=dumb-init
 ARG TARGET_DIR=common
@@ -30,6 +30,6 @@ RUN <<EOT /bin/bash
     rm -rf ${PACKAGE}
 EOT
 
-FROM bitnami/minideb:bullseye as stage-0
+FROM bitnami/minideb:bookworm as stage-0
 
 COPY --link --from=builder /opt/bitnami /opt/bitnami
