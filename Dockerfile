@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1.8
+# syntax=docker/dockerfile:1.18
 FROM bitnami/minideb:bookworm AS builder
 
 ARG PACKAGE=dumb-init
