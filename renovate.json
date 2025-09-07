@@ -41,6 +41,14 @@
       ],
       "rangeStrategy": "replace",
       "minimumReleaseAge": "1 day"
+    },
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchCurrentVersion": "!/^0/",
+      "automerge": true
     }
   ]
 }
