@@ -1,10 +1,11 @@
 # syntax=docker/dockerfile:1.27
-FROM bitnami/minideb:bookworm AS builder
+FROM bitnami/minideb:trixie AS builder
 
 ARG PACKAGE=dumb-init
 ARG TARGET_DIR=common
 # renovate: datasource=github-releases depName=Yelp/dumb-init extractVersion=^v(?<version>\d+\.\d+.\d+)
-ARG VERSION=1.2.5
+ARG BUILD_VERSION=1.2.5
+ARG VERSION=${BUILD_VERSION}
 ARG REF=v${VERSION}
 
 RUN mkdir -p /opt/bitnami
@@ -30,6 +31,6 @@ RUN <<EOT /bin/bash
     rm -rf ${PACKAGE}
 EOT
 
-FROM bitnami/minideb:bookworm as stage-0
+FROM bitnami/minideb:trixie as stage-0
 
 COPY --link --from=builder /opt/bitnami /opt/bitnami
