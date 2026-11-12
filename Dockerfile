@@ -1,4 +1,4 @@
-# syntax=docker/dockerfile:1.28
+# syntax=docker/dockerfile:1.29
 FROM bitnami/minideb:trixie AS builder
 
 ARG PACKAGE=dumb-init
